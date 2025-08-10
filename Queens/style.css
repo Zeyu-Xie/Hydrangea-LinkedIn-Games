@@ -1,0 +1,61 @@
+.color-0 {
+  background-color: #b9b39e;
+}
+
+.color-1 {
+  background-color: #dfdfdf;
+}
+
+.color-2 {
+  background-color: #dea0bf;
+}
+
+.color-3 {
+  background-color: #e5f387;
+}
+
+.color-4 {
+  background-color: #ffc891;
+}
+
+.color-5 {
+  background-color: #b3dea0;
+}
+
+.color-6 {
+  background-color: #ff7c61;
+}
+
+.color-7 {
+  background-color: #bba2e2;
+}
+
+.color-8 {
+  background-color: #97befe;
+}
+
+#board > table {
+  border-collapse: collapse;
+}
+#board > table td {
+  border: 1px solid black;
+  padding: 0;
+  width: 3rem;
+  min-width: 3rem;
+  height: 3rem;
+  min-height: 3rem;
+}
+
+#color-selector-bar,
+#current-color-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+#color-selector-bar > div,
+#current-color-bar > div {
+  height: 3rem;
+  width: 3rem;
+}
+
+/*# sourceMappingURL=style.css.map */

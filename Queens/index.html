@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hydrangea LinkedIn Games - Queens</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <section>
+        <p>Select Color</p>
+        <div id="color-selector-bar">
+            <div class="color-0"></div>
+            <div class="color-1"></div>
+            <div class="color-2"></div>
+            <div class="color-3"></div>
+            <div class="color-4"></div>
+            <div class="color-5"></div>
+            <div class="color-6"></div>
+            <div class="color-7"></div>
+            <div class="color-8"></div>
+        </div>
+    </section>
+
+    <section>
+        <p>Current Color</p>
+        <div id="current-color-bar">
+            <div class="color-0"></div>
+        </div>
+    </section>
+
+    <section>
+        <p>Game Board</p>
+        <div id="board">
+            <table>
+                <tr>
+                    <td data-row="0" data-col="0"></td>
+                    <td data-row="0" data-col="1"></td>
+                    <td data-row="0" data-col="2"></td>
+                    <td data-row="0" data-col="3"></td>
+                    <td data-row="0" data-col="4"></td>
+                    <td data-row="0" data-col="5"></td>
+                    <td data-row="0" data-col="6"></td>
+                    <td data-row="0" data-col="7"></td>
+                    <td data-row="0" data-col="8"></td>
+                </tr>
+                <tr>
+                    <td data-row="1" data-col="0"></td>
+                    <td data-row="1" data-col="1"></td>
+                    <td data-row="1" data-col="2"></td>
+                    <td data-row="1" data-col="3"></td>
+                    <td data-row="1" data-col="4"></td>
+                    <td data-row="1" data-col="5"></td>
+                    <td data-row="1" data-col="6"></td>
+                    <td data-row="1" data-col="7"></td>
+                    <td data-row="1" data-col="8"></td>
+                </tr>
+                <tr>
+                    <td data-row="2" data-col="0"></td>
+                    <td data-row="2" data-col="1"></td>
+                    <td data-row="2" data-col="2"></td>
+                    <td data-row="2" data-col="3"></td>
+                    <td data-row="2" data-col="4"></td>
+                    <td data-row="2" data-col="5"></td>
+                    <td data-row="2" data-col="6"></td>
+                    <td data-row="2" data-col="7"></td>
+                    <td data-row="2" data-col="8"></td>
+                </tr>
+                <tr>
+                    <td data-row="3" data-col="0"></td>
+                    <td data-row="3" data-col="1"></td>
+                    <td data-row="3" data-col="2"></td>
+                    <td data-row="3" data-col="3"></td>
+                    <td data-row="3" data-col="4"></td>
+                    <td data-row="3" data-col="5"></td>
+                    <td data-row="3" data-col="6"></td>
+                    <td data-row="3" data-col="7"></td>
+                    <td data-row="3" data-col="8"></td>
+                </tr>
+                <tr>
+                    <td data-row="4" data-col="0"></td>
+                    <td data-row="4" data-col="1"></td>
+                    <td data-row="4" data-col="2"></td>
+                    <td data-row="4" data-col="3"></td>
+                    <td data-row="4" data-col="4"></td>
+                    <td data-row="4" data-col="5"></td>
+                    <td data-row="4" data-col="6"></td>
+                    <td data-row="4" data-col="7"></td>
+                    <td data-row="4" data-col="8"></td>
+                </tr>
+                <tr>
+                    <td data-row="5" data-col="0"></td>
+                    <td data-row="5" data-col="1"></td>
+                    <td data-row="5" data-col="2"></td>
+                    <td data-row="5" data-col="3"></td>
+                    <td data-row="5" data-col="4"></td>
+                    <td data-row="5" data-col="5"></td>
+                    <td data-row="5" data-col="6"></td>
+                    <td data-row="5" data-col="7"></td>
+                    <td data-row="5" data-col="8"></td>
+                </tr>
+                <tr>
+                    <td data-row="6" data-col="0"></td>
+                    <td data-row="6" data-col="1"></td>
+                    <td data-row="6" data-col="2"></td>
+                    <td data-row="6" data-col="3"></td>
+                    <td data-row="6" data-col="4"></td>
+                    <td data-row="6" data-col="5"></td>
+                    <td data-row="6" data-col="6"></td>
+                    <td data-row="6" data-col="7"></td>
+                    <td data-row="6" data-col="8"></td>
+                </tr>
+                <tr>
+                    <td data-row="7" data-col="0"></td>
+                    <td data-row="7" data-col="1"></td>
+                    <td data-row="7" data-col="2"></td>
+                    <td data-row="7" data-col="3"></td>
+                    <td data-row="7" data-col="4"></td>
+                    <td data-row="7" data-col="5"></td>
+                    <td data-row="7" data-col="6"></td>
+                    <td data-row="7" data-col="7"></td>
+                    <td data-row="7" data-col="8"></td>
+                </tr>
+                <tr>
+                    <td data-row="8" data-col="0"></td>
+                    <td data-row="8" data-col="1"></td>
+                    <td data-row="8" data-col="2"></td>
+                    <td data-row="8" data-col="3"></td>
+                    <td data-row="8" data-col="4"></td>
+                    <td data-row="8" data-col="5"></td>
+                    <td data-row="8" data-col="6"></td>
+                    <td data-row="8" data-col="7"></td>
+                    <td data-row="8" data-col="8"></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <section>
+        <p>Click here to get solutions.</p>
+        <div>
+            <button type="button" id="submit-button">Submit</button>
+        </div>
+    </section>
+
+    <script src="./algorithm.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
