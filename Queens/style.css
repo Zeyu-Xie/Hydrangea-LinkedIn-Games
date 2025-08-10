@@ -58,4 +58,21 @@
   width: 3rem;
 }
 
+#solutions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+#solutions > table {
+  border-collapse: collapse;
+}
+#solutions > table td {
+  border: 1px solid black;
+  padding: 0;
+  width: 1.5rem;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  min-height: 1.5rem;
+}
+
 /*# sourceMappingURL=style.css.map */

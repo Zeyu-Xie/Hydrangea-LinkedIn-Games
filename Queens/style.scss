@@ -64,3 +64,22 @@ $color-8: #97befe;
     width: 3rem;
   }
 }
+
+// Solutions
+#solutions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  > table {
+    border-collapse: collapse;
+    td {
+      border: 1px solid black;
+      padding: 0;
+
+      width: 1.5rem;
+      min-width: 1.5rem;
+      height: 1.5rem;
+      min-height: 1.5rem;
+    }
+  }
+}

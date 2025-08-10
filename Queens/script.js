@@ -1,3 +1,6 @@
+// Arguments
+const MAX_SOLUTION_NUM = 20;
+
 // Global variable `current_color`
 let current_color = 0;
 
@@ -32,8 +35,10 @@ for (let i = 0; i < td_num; i++) {
 /* 3. Submit board */
 
 const _submit_button = document.querySelector("#submit-button");
+const _solutions_div = document.querySelector("#solutions")
 
 _submit_button.addEventListener("click", () => {
+
     for (let i = 0; i < td_num; i++) {
         const _td = _td_list[i];
         if (_td.className === "") {
@@ -48,4 +53,28 @@ _submit_button.addEventListener("click", () => {
     console.log(board);
     solutions = get_solutions(board);
     console.log(solutions);
+    const solutions_num = solutions.length;
+
+    for (let i = 0; i < solutions_num; i++) {
+        if (i >= MAX_SOLUTION_NUM)
+            break;
+        const _solution_table = document.createElement("table");
+        for (let j = 0; j < 9; j++) {
+            const _tr = document.createElement("tr");
+            for (let k = 0; k < 9; k++) {
+                const _td = document.createElement("td");
+                _td.className = `color-${board[j][k]}`;
+                if (solutions[i][j] === k) {
+                    _td.innerHTML = `
+<svg width="1.5rem" height="1.5rem" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" style="display: block;">
+    <circle cx="24" cy="24" r="16" fill="#000"/>
+</svg>
+                    `
+                }
+                _tr.appendChild(_td);
+            }
+            _solution_table.appendChild(_tr);
+        }
+        _solutions_div.appendChild(_solution_table);
+    }
 })
