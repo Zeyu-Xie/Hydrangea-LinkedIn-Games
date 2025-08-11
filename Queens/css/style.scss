@@ -80,6 +80,13 @@ $color-8: #97befe;
       min-width: 1.5rem;
       height: 1.5rem;
       min-height: 1.5rem;
+
+      img {
+        display: block;
+
+        width: 1.5rem;
+        height: 1.5rem;
+      }
     }
   }
 }

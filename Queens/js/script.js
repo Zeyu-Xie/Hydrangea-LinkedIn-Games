@@ -36,18 +36,13 @@ for (let i = 0; i < td_num; i++) {
 
 const _load_preset_board_button = document.querySelector("#load-preset-board-button");
 
-_load_preset_board_button.addEventListener("click", () => {
-    board = [
-        [0, 0, 0, 0, 0, 0, 0, 1, 1],
-        [0, 0, 0, 2, 2, 2, 3, 3, 1],
-        [0, 0, 2, 2, 2, 2, 2, 3, 1],
-        [0, 0, 2, 2, 2, 2, 2, 3, 3],
-        [0, 4, 2, 2, 4, 2, 2, 4, 3],
-        [5, 4, 4, 4, 4, 4, 4, 4, 3],
-        [5, 6, 6, 4, 6, 4, 6, 6, 7],
-        [5, 8, 6, 6, 6, 6, 6, 7, 7],
-        [5, 8, 8, 8, 8, 8, 7, 7, 7]
-    ];
+_load_preset_board_button.addEventListener("click", async () => {
+    await fetch("./assets/preset_boards.json")
+        .then(res => res.json())
+        .then(res => {
+            board = res[1];
+        })
+        .catch(err => console.error(err));
     for (let i = 0; i < td_num; i++) {
         const _td = _td_list[i];
         _td.className = `color-${board[Number(_td.dataset.row)][Number(_td.dataset.col)]}`;
@@ -77,8 +72,10 @@ _submit_button.addEventListener("click", () => {
 
     // Calculate solutions
     solutions = get_solutions(board);
-    console.log(solutions);
     const solutions_num = solutions.length;
+    console.log(`Find ${solutions_num} ${solutions_num === 1 ? "solution" : "solutions"}.`);
+    console.log(solutions);
+
 
     // Render solutions to the solutions div
     _solutions_div.innerHTML = "";
@@ -92,11 +89,9 @@ _submit_button.addEventListener("click", () => {
                 const _td = document.createElement("td");
                 _td.className = `color-${board[j][k]}`;
                 if (solutions[i][j] === k) {
-                    _td.innerHTML = `
-<svg width="1.5rem" height="1.5rem" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" style="display: block;">
-    <circle cx="24" cy="24" r="16" fill="#000"/>
-</svg>
-                    `
+                    const _img = document.createElement("img");
+                    _img.src = "./assets/crown.svg";
+                    _td.appendChild(_img);
                 }
                 _tr.appendChild(_td);
             }
