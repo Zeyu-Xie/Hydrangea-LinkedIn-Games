@@ -32,13 +32,36 @@ for (let i = 0; i < td_num; i++) {
     });
 }
 
-/* 3. Submit board */
+/* 3. Load preset board button */
+
+const _load_preset_board_button = document.querySelector("#load-preset-board-button");
+
+_load_preset_board_button.addEventListener("click", () => {
+    board = [
+        [0, 0, 0, 0, 0, 0, 0, 1, 1],
+        [0, 0, 0, 2, 2, 2, 3, 3, 1],
+        [0, 0, 2, 2, 2, 2, 2, 3, 1],
+        [0, 0, 2, 2, 2, 2, 2, 3, 3],
+        [0, 4, 2, 2, 4, 2, 2, 4, 3],
+        [5, 4, 4, 4, 4, 4, 4, 4, 3],
+        [5, 6, 6, 4, 6, 4, 6, 6, 7],
+        [5, 8, 6, 6, 6, 6, 6, 7, 7],
+        [5, 8, 8, 8, 8, 8, 7, 7, 7]
+    ];
+    for (let i = 0; i < td_num; i++) {
+        const _td = _td_list[i];
+        _td.className = `color-${board[Number(_td.dataset.row)][Number(_td.dataset.col)]}`;
+    }
+})
+
+/* 4. Submit board */
 
 const _submit_button = document.querySelector("#submit-button");
-const _solutions_div = document.querySelector("#solutions")
+const _solutions_div = document.querySelector("#solutions");
 
 _submit_button.addEventListener("click", () => {
 
+    // Get data for `board`
     for (let i = 0; i < td_num; i++) {
         const _td = _td_list[i];
         if (_td.className === "") {
@@ -51,10 +74,14 @@ _submit_button.addEventListener("click", () => {
         board[row][col] = color;
     }
     console.log(board);
+
+    // Calculate solutions
     solutions = get_solutions(board);
     console.log(solutions);
     const solutions_num = solutions.length;
 
+    // Render solutions to the solutions div
+    _solutions_div.innerHTML = "";
     for (let i = 0; i < solutions_num; i++) {
         if (i >= MAX_SOLUTION_NUM)
             break;

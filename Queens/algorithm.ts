@@ -1,5 +1,5 @@
 // Global variable `board`
-const board: number[][] = Array.from({ length: 9 }, () => Array(9).fill(-1));
+let board: number[][] = Array.from({ length: 9 }, () => Array(9).fill(-1));
 
 /*
     1. Init

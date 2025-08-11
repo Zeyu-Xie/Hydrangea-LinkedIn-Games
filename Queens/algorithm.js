@@ -1,6 +1,6 @@
 "use strict";
 // Global variable `board`
-const board = Array.from({ length: 9 }, () => Array(9).fill(-1));
+let board = Array.from({ length: 9 }, () => Array(9).fill(-1));
 /*
     1. Init
     Get `pt_solutions` and `N`.
